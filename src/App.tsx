@@ -1,35 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Login from "./components/login/Login";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div
+        style={{
+          width: "100vw",
+          height: "100vh",
+          // background: 'linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(0,0,0, 0.8) 80%, rgba(40, 120, 32, 0.78) 100%)'
+          // background: 'radial-gradient(circle,rgba(0, 0, 0, 1) 0%, rgba(0,0,0, 0.8) 80%, rgba(40, 120, 32, 0.78) 100%)'
+          background:
+            "radial-gradient(1200px 600px at 10% 20%, rgba(15,76,107,0.08), transparent 12%), radial-gradient(900px 500px at 85% 80%, rgba(69,42,106,0.06), transparent 10%), linear-gradient(180deg, #050507 0%, #061605ff 100%)",
+        }}
+      >
+        <Login />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
