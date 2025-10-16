@@ -6,8 +6,11 @@ import {
   Center,
   Button,
   Text,
+  Link,
 } from "@chakra-ui/react";
 import { PasswordInput } from "../ui/password-input";
+import { Image } from "@chakra-ui/react";
+import logo from "../../imagens/inovaedu_school__2_-removebg-preview.png"
 
 function Login() {
   return (
@@ -18,7 +21,7 @@ function Login() {
           display: "flex",
           flexDirection: "column",
           gap: "30px",
-          backgroundColor: "#222224",
+          backgroundColor: "#222224a2",
           padding: "2rem",
           borderRadius: "12px",
         }}
@@ -29,7 +32,11 @@ function Login() {
             gap: "10px",
           }}
         >
-          <div>Logo</div>
+          <div>
+            <Image rounded="md" src={logo} alt="Logo" style={{
+              width: "200px",
+            }} />
+          </div>
           <Text textStyle="2xl" fontWeight="bold">
             Acesse sua Conta
           </Text>
@@ -63,6 +70,9 @@ function Login() {
         >
           Entrar
         </Button>
+        <div style={{ display: 'flex', gap: '3px', fontSize: '14px', justifyContent: 'flex-end' }}>
+          Não possui uma conta? <Link variant="underline" colorPalette='green'>Cadastre-se</Link>
+        </div>
       </Container>
     </AbsoluteCenter>
   );
