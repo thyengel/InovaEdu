@@ -45,7 +45,6 @@ function Login() {
           <Field.Root>
             <Field.Label>E-mail</Field.Label>
             <Input placeholder="E-mail" style={{
-              border: "solid",
               borderColor: "#ffffff8c"
             }} />
           </Field.Root>
@@ -54,7 +53,6 @@ function Login() {
           <Field.Root>
             <Field.Label>Senha</Field.Label>
             <PasswordInput placeholder="Senha" style={{
-              border: "solid",
               borderColor: "#ffffff8c"
             }} />
           </Field.Root>
@@ -71,7 +69,7 @@ function Login() {
           Entrar
         </Button>
         <div style={{ display: 'flex', gap: '3px', fontSize: '14px', justifyContent: 'flex-end' }}>
-          Não possui uma conta? <Link variant="underline" colorPalette='green'>Cadastre-se</Link>
+          Não possui uma conta? <Link variant="underline" colorPalette='green' href="cadastro">Cadastre-se</Link>
         </div>
       </Container>
     </AbsoluteCenter>
