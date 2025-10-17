@@ -14,6 +14,7 @@ import { Image } from "@chakra-ui/react";
 import logo from "../../imagens/inovaedu_school__2_-removebg-preview.png";
 import { type Options, passwordStrength } from "check-password-strength";
 import { useState, useMemo } from "react";
+import UserService from "@/services/UserService";
 
 const strengthOptions: Options<string> = [
   { id: 1, value: "fraca", minDiversity: 0, minLength: 0 },
@@ -30,8 +31,8 @@ function Cadastro() {
   const [name, setName] = useState("")
 
   const [isEmailValid, setIsEmailValid] = useState(true)
-
   const [isNameValid, setIsNameValid] = useState(true)
+  const [isPasswordValid, setIsPasswordValid] = useState(true)
 
   const strength = useMemo(() => {
     if (!password) return 0
@@ -45,6 +46,12 @@ function Cadastro() {
     }
     if (!name) {
       setIsNameValid(false)
+    }
+    if (!password) {
+      setIsPasswordValid(false)
+    }
+    if (email && name && password) {
+      UserService.createUser(name, email, password);
     }
   }
 
@@ -105,7 +112,7 @@ function Cadastro() {
             />
             <Field.ErrorText>Campo obrigatório</Field.ErrorText>
           </Field.Root>
-          <Field.Root>
+          <Field.Root invalid={!isPasswordValid}>
             <Field.Label>Senha</Field.Label>
             <Stack gap="3" style={{
               width: "100%"
