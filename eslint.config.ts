@@ -11,8 +11,12 @@ export default defineConfig([
     plugins: { js },
     extends: ["js/recommended"],
     languageOptions: { globals: globals.browser },
+    rules: {
+      "react-refresh/only-export-components": "off",
+      "react/react-in-jsx-scope": "off"
+    }
   },
   tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
-  eslintConfigPrettier
+  eslintConfigPrettier,
 ]);
