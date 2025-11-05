@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import {
   AbsoluteCenter,
   Button,
@@ -7,51 +8,61 @@ import {
   Input,
   Text,
   Link,
-  Stack
+  Stack,
 } from "@chakra-ui/react";
 import { PasswordInput, PasswordStrengthMeter } from "../ui/password-input";
 import { Image } from "@chakra-ui/react";
-import logo from "../../imagens/inovaedu_school__2_-removebg-preview.png";
+import logo from "../../imagens/logo.png";
 import { type Options, passwordStrength } from "check-password-strength";
 import { useState, useMemo } from "react";
 import UserService from "@/services/UserService";
+import { useAlert } from "@/hooks/useAlert";
+import { AlertStatus } from "@/context/AlertProvider";
+import { useNavigate } from "react-router";
 
 const strengthOptions: Options<string> = [
   { id: 1, value: "fraca", minDiversity: 0, minLength: 0 },
   { id: 2, value: "média", minDiversity: 2, minLength: 6 },
   { id: 3, value: "forte", minDiversity: 3, minLength: 8 },
   { id: 4, value: "forte", minDiversity: 4, minLength: 10 },
-]
+];
 
 function Cadastro() {
-  const [password, setPassword] = useState("")
+  const navigate = useNavigate();
+  const { dispatchAlert } = useAlert();
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
 
-  const [email, setEmail] = useState("")
-
-  const [name, setName] = useState("")
-
-  const [isEmailValid, setIsEmailValid] = useState(true)
-  const [isNameValid, setIsNameValid] = useState(true)
-  const [isPasswordValid, setIsPasswordValid] = useState(true)
+  const [isEmailValid, setIsEmailValid] = useState(true);
+  const [isNameValid, setIsNameValid] = useState(true);
+  const [isPasswordValid, setIsPasswordValid] = useState(true);
 
   const strength = useMemo(() => {
-    if (!password) return 0
-    const result = passwordStrength(password, strengthOptions)
-    return result.id
-  }, [password])
+    if (!password) return 0;
+    const result = passwordStrength(password, strengthOptions);
+    return result.id;
+  }, [password]);
 
   function handleRegisterUser() {
     if (!email) {
-      setIsEmailValid(false)
+      setIsEmailValid(false);
     }
     if (!name) {
-      setIsNameValid(false)
+      setIsNameValid(false);
     }
     if (!password) {
-      setIsPasswordValid(false)
+      setIsPasswordValid(false);
     }
     if (email && name && password) {
-      UserService.createUser(name, email, password);
+      try {
+        UserService.createUser(name, email, password);
+        dispatchAlert(AlertStatus.SUCCESS, "Usuário cadastrado com sucesso!")
+        navigate("/")
+      } catch (e) {
+        const error = e as Error;
+        dispatchAlert(AlertStatus.ERROR, error.message ?? '');
+      }
     }
   }
 
@@ -66,7 +77,8 @@ function Cadastro() {
           backgroundColor: "#222224a2",
           padding: "2rem",
           borderRadius: "12px",
-        }}>
+        }}
+      >
         <Center
           style={{
             flexDirection: "column",
@@ -74,19 +86,25 @@ function Cadastro() {
           }}
         >
           <div>
-            <Image rounded="md" src={logo} alt="Logo" style={{
-              width: "200px",
-            }} />
+            <Image
+              rounded="md"
+              src={logo}
+              alt="Logo"
+              style={{
+                width: "200px",
+              }}
+            />
           </div>
           <Text textStyle="2xl" fontWeight="bold">
             Crie sua conta
           </Text>
         </Center>
-        <div style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "15px"
-        }}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "15px",
+          }}
         >
           <Field.Root invalid={!isNameValid}>
             <Field.Label>Nome</Field.Label>
@@ -95,7 +113,7 @@ function Cadastro() {
               onChange={(e) => setName(e.currentTarget.value)}
               placeholder="Nome"
               style={{
-                ...(isNameValid && { borderColor: "#ffffff8c" })
+                ...(isNameValid && { borderColor: "#ffffff8c" }),
               }}
             />
             <Field.ErrorText>Campo obrigatório</Field.ErrorText>
@@ -107,22 +125,25 @@ function Cadastro() {
               onChange={(e) => setEmail(e.currentTarget.value)}
               placeholder="E-mail"
               style={{
-                ...(isEmailValid && { borderColor: "#ffffff8c" })
+                ...(isEmailValid && { borderColor: "#ffffff8c" }),
               }}
             />
             <Field.ErrorText>Campo obrigatório</Field.ErrorText>
           </Field.Root>
           <Field.Root invalid={!isPasswordValid}>
             <Field.Label>Senha</Field.Label>
-            <Stack gap="3" style={{
-              width: "100%"
-            }}>
+            <Stack
+              gap="3"
+              style={{
+                width: "100%",
+              }}
+            >
               <PasswordInput
                 value={password}
                 onChange={(e) => setPassword(e.currentTarget.value)}
                 placeholder="Senha"
                 style={{
-                  borderColor: "#ffffff8c"
+                  borderColor: "#ffffff8c",
                 }}
               />
               <PasswordStrengthMeter value={strength} />
@@ -134,19 +155,29 @@ function Cadastro() {
           colorPalette={"green"}
           style={{
             borderRadius: "15px",
-            fontWeight: 'bold',
-            fontSize: '1rem'
+            fontWeight: "bold",
+            fontSize: "1rem",
           }}
           onClick={handleRegisterUser}
         >
           Cadastrar
         </Button>
-        <div style={{ display: 'flex', gap: '3px', fontSize: '14px', justifyContent: 'flex-end' }}>
-          Já possui uma conta? <Link variant="underline" colorPalette='green' href="/">Entrar</Link>
+        <div
+          style={{
+            display: "flex",
+            gap: "3px",
+            fontSize: "14px",
+            justifyContent: "flex-end",
+          }}
+        >
+          Já possui uma conta?{" "}
+          <Link variant="underline" colorPalette="green" href="/">
+            Entrar
+          </Link>
         </div>
       </Container>
     </AbsoluteCenter>
-  )
+  );
 }
 
 export default Cadastro;

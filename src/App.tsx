@@ -1,6 +1,8 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { Routes, Route } from "react-router";
-import Cadastro from "./components/cadastro/Cadastro";
+import Register from "./components/register/Register";
 import Login from "./components/login/Login";
+import TopBar from "./components/topBar/TopBar";
 
 function App() {
   return (
@@ -14,7 +16,8 @@ function App() {
     >
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="cadastro" element={<Cadastro />} />
+        <Route path="cadastro" element={<Register />} />
+        <Route path="home" element={<TopBar />} />
       </Routes>
     </div>
   );
