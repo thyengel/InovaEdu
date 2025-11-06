@@ -11,13 +11,14 @@ import {
 } from "@chakra-ui/react";
 import { PasswordInput, PasswordStrengthMeter } from "../ui/password-input";
 import { Image } from "@chakra-ui/react";
-import logo from "../../imagens/logo.png";
+import logo from "../../images/logo.png";
 import { type Options, passwordStrength } from "check-password-strength";
 import { useState, useMemo } from "react";
 import UserService from "@/services/UserService";
 import { useAlert } from "@/hooks/useAlert";
 import { AlertStatus } from "@/context/AlertProvider";
 import { useNavigate } from "react-router";
+import useMutation from "@/hooks/useMutation";
 
 const strengthOptions: Options<string> = [
   { id: 1, value: "fraca", minDiversity: 0, minLength: 0 },
@@ -28,6 +29,7 @@ const strengthOptions: Options<string> = [
 
 function Cadastro() {
   const navigate = useNavigate();
+  const { mutate, isLoading } = useMutation({ mutationFn: UserService.createUser })
   const { dispatchAlert } = useAlert();
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -54,14 +56,18 @@ function Cadastro() {
       setIsPasswordValid(false);
     }
     if (email && name && password) {
-      try {
-        UserService.createUser(name, email, password);
-        dispatchAlert(AlertStatus.SUCCESS, "Usuário cadastrado com sucesso!")
-        navigate("/")
-      } catch (e) {
-        const error = e as Error;
-        dispatchAlert(AlertStatus.ERROR, error.message ?? '');
-      }
+      mutate(
+        { data: { name, email, password } },
+        {
+          onError: (e) => {
+            const error = e as Error;
+            dispatchAlert(AlertStatus.ERROR, error.message ?? '');
+          },
+          onSuccess: () => {
+            dispatchAlert(AlertStatus.SUCCESS, "Usuário cadastrado com sucesso!");
+            navigate("/");
+          }
+        })
     }
   }
 
@@ -158,6 +164,7 @@ function Cadastro() {
             fontSize: "1rem",
           }}
           onClick={handleRegisterUser}
+          loading={isLoading}
         >
           Cadastrar
         </Button>

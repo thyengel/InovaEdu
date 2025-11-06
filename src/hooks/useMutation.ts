@@ -7,8 +7,8 @@ export default function useMutation<T>({ mutationFn }: { mutationFn: (data: T) =
   const mutate = useCallback(async (
     { data }: { data: T },
     { onSuccess, onError }: {
-      onSuccess: () => void,
-      onError: (e: unknown) => void
+      onSuccess?: () => void,
+      onError?: (e: unknown) => void
     }) => {
     const delay = getDelay();
     await new Promise<void>((resolve) => {
@@ -16,9 +16,9 @@ export default function useMutation<T>({ mutationFn }: { mutationFn: (data: T) =
       setTimeout(() => {
         try {
           mutationFn(data);
-          onSuccess();
+          onSuccess?.();
         } catch (e) {
-          onError(e);
+          onError?.(e);
         } finally {
           setIsLoading(false);
           resolve();

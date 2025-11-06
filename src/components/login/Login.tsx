@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { PasswordInput } from "../ui/password-input";
 import { Image } from "@chakra-ui/react";
-import logo from "../../imagens/logo.png"
+import logo from "../../images/logo.png"
 import { useNavigate } from "react-router";
 import { useState } from "react";
 import UserService from "@/services/UserService";
