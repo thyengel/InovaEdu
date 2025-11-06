@@ -1,4 +1,3 @@
-/* eslint-disable react/react-in-jsx-scope */
 import {
   Input,
   AbsoluteCenter,
@@ -17,22 +16,28 @@ import { useState } from "react";
 import UserService from "@/services/UserService";
 import { useAlert } from "@/hooks/useAlert";
 import { AlertStatus } from "@/context/AlertProvider";
+import useMutation from "@/hooks/useMutation";
 
 function Login() {
   const { dispatchAlert } = useAlert();
+  const { mutate, isLoading } = useMutation({
+    mutationFn: UserService.logInUser,
+  });
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
   const navigate = useNavigate();
 
   function handleLogin() {
-    try {
-      UserService.logInUser(email, password);
-      navigate("/home")
-    } catch (e) {
-      const error = e as Error;
-      dispatchAlert(AlertStatus.ERROR, error.message ?? '');
-    }
+    mutate({ data: { email, password } }, {
+      onSuccess: () => {
+        navigate("/home");
+      },
+      onError: (e) => {
+        const error = e as Error;
+        dispatchAlert(AlertStatus.ERROR, error.message ?? '');
+      }
+    })
   }
 
   return (
@@ -98,6 +103,7 @@ function Login() {
           }}
           onClick={handleLogin}
           disabled={!email || !password}
+          loading={isLoading}
         >
           Entrar
         </Button>

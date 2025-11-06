@@ -1,5 +1,5 @@
 const USERS_KEY = 'users';
-const LOGGED_USER_KEY = 'logged_user';
+export const LOGGED_USER_KEY = 'logged_user';
 type User = {
   id: number;
   name: string;
@@ -15,13 +15,14 @@ class UserService {
       return;
     }
     const formattedUsers = JSON.parse(users) as User[];
-    if (formattedUsers.find((user) => user.name === name && user.email === email)) {
+    if (formattedUsers.find((user) => user.email === email)) {
       throw new Error('Usuário já cadastrado');
     }
     const updatedUsers = [...formattedUsers, { name, email, password, id: formattedUsers.length + 1 }]
     localStorage.setItem(USERS_KEY, JSON.stringify(updatedUsers));
   }
-  logInUser(email: string, password: string) {
+
+  logInUser({ email, password }: { email: string, password: string }) {
     const users = localStorage.getItem(USERS_KEY);
     if (!users) {
       throw new Error('Credenciais inválidas! Por favor tente novamente');
