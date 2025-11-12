@@ -8,8 +8,12 @@ type User = {
 }
 
 class UserService {
-  createUser({ name, email, password }: { name: string, email: string, password: string }) {
+  createUser(data: { name: string, email: string, password: string } | undefined) {
     const users = localStorage.getItem(USERS_KEY); // pega todos os usuários do local storage: ESTÃO EM STRING!
+    if (data === undefined) {
+      throw new Error('Dados inválidos');
+    }
+    const { name, email, password } = data;
     if (!users) {
       localStorage.setItem(USERS_KEY, JSON.stringify([{ id: 1, name, email, password }]));
       return;
