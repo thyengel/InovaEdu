@@ -1,24 +1,24 @@
 import { useCallback, useState } from "react";
 import { getDelay } from "./useQuery";
 
-export default function useMutation<T>({ mutationFn }: { mutationFn: (data: T) => void }) {
+export default function useMutation<T>({ mutationFn }: { mutationFn: (data?: T) => void }) {
   const [isLoading, setIsLoading] = useState(false);
 
   const mutate = useCallback(async (
-    { data }: { data: T },
+    body: { data: T } | undefined,
     { onSuccess, onError }: {
       onSuccess: () => void,
-      onError: (e: unknown) => void
+      onError?: (e: unknown) => void
     }) => {
     const delay = getDelay();
     await new Promise<void>((resolve) => {
       setIsLoading(true);
       setTimeout(() => {
         try {
-          mutationFn(data);
+          mutationFn(body?.data);
           onSuccess();
         } catch (e) {
-          onError(e);
+          onError?.(e);
         } finally {
           setIsLoading(false);
           resolve();

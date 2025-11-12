@@ -1,39 +1,81 @@
-/* eslint-disable react/react-in-jsx-scope */
 import { Avatar, Button, Container, Menu, Portal } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
-import logo from "../../imagens/logo.png";
-import videoLogo from "../../imagens/youtube.svg";
-import play from "../../imagens/play-circle.svg";
-import profile from "../../imagens/profile.svg";
+import logo from "../../images/logo.png";
+import { CircleUserRound, Heart, PlayCircleIcon, Youtube } from "lucide-react";
+import useMutation from "@/hooks/useMutation";
+import UserService from "@/services/UserService";
+import { useNavigate } from "react-router";
 
 function TopBar() {
+
+  const { mutate } = useMutation({
+    mutationFn: UserService.logOutUser,
+  })
+  const navigate = useNavigate();
+
+  function handleLogout() {
+    mutate(undefined, {
+      onSuccess: () => {
+        navigate("/")
+      },
+    })
+  }
+
   return (
-    <Container>
-      <Image src={logo} alt="Logo" style={{
-        width: "20px"
-      }} />
-      <Button variant="ghost">
-        <Image src={videoLogo} alt="Logo Vídeo" />
-        Cursos
-      </Button>
-      <Button>
-        <Image src={play} alt="Play-circle" />
-        Formação
-      </Button>
+    <Container style={{
+      display: "flex",
+      gap: "30px",
+      padding: "2rem",
+      justifyContent: 'space-between',
+    }}>
+      <div style={{
+        display: 'flex',
+        gap: '30px',
+        alignItems: 'center',
+      }}>
+        <Image src={logo} alt="Logo"
+          style={{
+            width: "80px"
+          }} />
+        <Button
+          style={{
+            borderRadius: "10px",
+            fontSize: '15px',
+          }}
+          variant="ghost">
+          <Youtube style={{ width: '25px', height: '25px' }} />
+          Cursos
+        </Button>
+        <Button
+          style={{
+            borderRadius: "10px",
+            fontSize: '15px',
+          }}
+          variant="ghost">
+          <PlayCircleIcon style={{ width: '25px', height: '25px' }} />
+          Formação
+        </Button>
+        <Button
+          style={{
+            borderRadius: "10px",
+            fontSize: '15px',
+          }}
+          variant="ghost">
+          <Heart style={{ width: '25px', height: '25px' }} />
+          Favoritos
+        </Button>
+      </div>
       <div>
         <Menu.Root positioning={{ placement: "right-end" }}>
           <Menu.Trigger rounded="full" focusRing="outside">
             <Avatar.Root size="sm">
-              <Avatar.Fallback name="Segun Adebayo" />
-              <Avatar.Image src={profile} />
+              <CircleUserRound style={{ width: '30px', height: '30px' }} />
             </Avatar.Root>
           </Menu.Trigger>
           <Portal>
             <Menu.Positioner>
               <Menu.Content>
-                <Menu.Item value="account">Account</Menu.Item>
-                <Menu.Item value="settings">Settings</Menu.Item>
-                <Menu.Item value="logout">Logout</Menu.Item>
+                <Menu.Item value="logout" onClick={handleLogout}>Sair</Menu.Item>
               </Menu.Content>
             </Menu.Positioner>
           </Portal>
