@@ -8,8 +8,12 @@ type User = {
 }
 
 class UserService {
-  createUser({ name, email, password }: { name: string, email: string, password: string }) {
+  createUser(data: { name: string, email: string, password: string } | undefined) {
     const users = localStorage.getItem(USERS_KEY); // pega todos os usuários do local storage: ESTÃO EM STRING!
+    if (data === undefined) {
+      throw new Error('Dados inválidos');
+    }
+    const { name, email, password } = data;
     if (!users) {
       localStorage.setItem(USERS_KEY, JSON.stringify([{ id: 1, name, email, password }]));
       return;
@@ -22,17 +26,21 @@ class UserService {
     localStorage.setItem(USERS_KEY, JSON.stringify(updatedUsers));
   }
 
-  logInUser({ email, password }: { email: string, password: string }) {
+  logInUser(data: { email: string, password: string } | undefined) {
     const users = localStorage.getItem(USERS_KEY);
     if (!users) {
       throw new Error('Credenciais inválidas! Por favor tente novamente');
     }
     const formattedUsers = JSON.parse(users) as User[];
-    const user = formattedUsers.find(user => user.email === email && user.password === password);
+    const user = formattedUsers.find(user => user.email === data?.email && user.password === data?.password);
     if (!user) {
       throw new Error('Credenciais inválidas! Por favor tente novamente')
     }
     localStorage.setItem(LOGGED_USER_KEY, JSON.stringify(user));
+  }
+
+  logOutUser() {
+    localStorage.removeItem(LOGGED_USER_KEY);
   }
 
 }

@@ -9,7 +9,7 @@ import {
   Link,
   Stack,
 } from "@chakra-ui/react";
-import { PasswordInput, PasswordStrengthMeter } from "../ui/password-input";
+import { PasswordInput, PasswordStrengthMeter } from "../../components/ui/password-input";
 import { Image } from "@chakra-ui/react";
 import logo from "../../images/logo.png";
 import { type Options, passwordStrength } from "check-password-strength";

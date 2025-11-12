@@ -2,8 +2,25 @@ import { Avatar, Button, Container, Menu, Portal } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
 import logo from "../../images/logo.png";
 import { CircleUserRound, Heart, PlayCircleIcon, Youtube } from "lucide-react";
+import useMutation from "@/hooks/useMutation";
+import UserService from "@/services/UserService";
+import { useNavigate } from "react-router";
 
 function TopBar() {
+
+  const { mutate } = useMutation({
+    mutationFn: UserService.logOutUser,
+  })
+  const navigate = useNavigate();
+
+  function handleLogout() {
+    mutate(undefined, {
+      onSuccess: () => {
+        navigate("/")
+      },
+    })
+  }
+
   return (
     <Container style={{
       display: "flex",
@@ -58,7 +75,7 @@ function TopBar() {
           <Portal>
             <Menu.Positioner>
               <Menu.Content>
-                <Menu.Item value="logout">Sair</Menu.Item>
+                <Menu.Item value="logout" onClick={handleLogout}>Sair</Menu.Item>
               </Menu.Content>
             </Menu.Positioner>
           </Portal>

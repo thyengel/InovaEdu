@@ -8,7 +8,7 @@ import {
   Text,
   Link,
 } from "@chakra-ui/react";
-import { PasswordInput } from "../ui/password-input";
+import { PasswordInput } from "../../components/ui/password-input";
 import { Image } from "@chakra-ui/react";
 import logo from "../../images/logo.png"
 import { useNavigate } from "react-router";
