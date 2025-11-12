@@ -7,7 +7,7 @@ export default function useMutation<T>({ mutationFn }: { mutationFn: (data?: T) 
   const mutate = useCallback(async (
     body: { data: T } | undefined,
     { onSuccess, onError }: {
-      onSuccess: () => void,
+      onSuccess?: () => void,
       onError?: (e: unknown) => void
     }) => {
     const delay = getDelay();
@@ -16,7 +16,7 @@ export default function useMutation<T>({ mutationFn }: { mutationFn: (data?: T) 
       setTimeout(() => {
         try {
           mutationFn(body?.data);
-          onSuccess();
+          onSuccess?.();
         } catch (e) {
           onError?.(e);
         } finally {

@@ -20,11 +20,11 @@ export default function useQuery<T>({ queryFn, onSuccess, onError }: {
         try {
           const response = queryFn();
           setData(response);
-          setIsLoading(false);
           onSuccess(response);
         } catch (e) {
           onError(e);
         } finally {
+          setIsLoading(false);
           resolve();
         }
       }, delay);

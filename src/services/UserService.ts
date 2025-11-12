@@ -8,7 +8,7 @@ type User = {
 }
 
 class UserService {
-  createUser(name: string, email: string, password: string) {
+  createUser({ name, email, password }: { name: string, email: string, password: string }) {
     const users = localStorage.getItem(USERS_KEY); // pega todos os usuários do local storage: ESTÃO EM STRING!
     if (!users) {
       localStorage.setItem(USERS_KEY, JSON.stringify([{ id: 1, name, email, password }]));
