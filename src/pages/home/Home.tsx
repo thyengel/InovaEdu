@@ -1,6 +1,7 @@
 import TopBar from "@/components/topBar/TopBar";
 import { Button, Box, Card, Container, Image, SimpleGrid, Text, Grid } from "@chakra-ui/react";
 import { Route, TvMinimal } from "lucide-react";
+import { useNavigate } from "react-router";
 
 const COURSES_MOST_WATCH = [
   {
@@ -48,6 +49,8 @@ const LEARNING_TRACK = [
 ]
 
 function Home() {
+  const navigate = useNavigate();
+
   return (
     <>
       <TopBar />
@@ -122,8 +125,19 @@ function Home() {
             <Text style={{ fontSize: '18px', fontWeight: 'bold' }}> Trilhas</Text>
           </div>
           <Grid templateColumns="repeat(3, 1fr)" gap="6">
-            {LEARNING_TRACK.map(({ title, description, image }) => (
-              <Card.Root maxW="sm" overflow="hidden" style={{ cursor: 'pointer', transition: 'all 200ms linear' }} _hover={{ boxShadow: '0px 5px 22px 6px rgba(125,165,121,0.5)' }}>
+            {LEARNING_TRACK.map(({ title, description, image }, i) => (
+              <Card.Root
+                maxW="sm"
+                overflow="hidden"
+                style={{
+                  cursor: 'pointer',
+                  transition: 'all 200ms linear'
+                }}
+                _hover={{ boxShadow: '0px 5px 22px 6px rgba(125,165,121,0.5)' }}
+                onClick={() => navigate(`/trilhas/${i}`)
+
+                }
+              >
                 <Image
                   src={image}
                   alt="Green double couch with wooden legs"

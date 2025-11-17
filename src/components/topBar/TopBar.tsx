@@ -21,6 +21,10 @@ function TopBar() {
     })
   }
 
+  function handleLogoButton() {
+    navigate('/home')
+  }
+
   return (
     <Container style={{
       display: "flex",
@@ -35,8 +39,9 @@ function TopBar() {
       }}>
         <Image src={logo} alt="Logo"
           style={{
-            width: "80px"
-          }} />
+            width: "80px",
+            cursor: 'pointer',
+          }} onClick={handleLogoButton} />
         <Button
           style={{
             borderRadius: "10px",

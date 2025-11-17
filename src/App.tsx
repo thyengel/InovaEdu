@@ -3,6 +3,8 @@ import Login from "./pages/login/Login";
 import PrivateRoutes from "./components/privateRoutes/PrivateRoutes";
 import Register from "./pages/register/Register";
 import Home from "./pages/home/Home";
+import Course from "./pages/course/Course";
+import TopBar from "./components/topBar/TopBar";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
       <Routes>
         <Route element={<PrivateRoutes />}>
           <Route path="home" element={<Home />} />
+          <Route path="trilhas/:path_id" element={<Course />} />
+          <Route path="home" element={<TopBar />} />
         </Route>
         <Route path="/" element={<Login />} />
         <Route path="cadastro" element={<Register />} />
