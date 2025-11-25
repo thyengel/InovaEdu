@@ -25,6 +25,10 @@ function TopBar() {
     navigate('/home')
   }
 
+  function hadleButtoncourse() {
+    navigate('/curso')
+  }
+
   return (
     <Container style={{
       display: "flex",
@@ -47,7 +51,8 @@ function TopBar() {
             borderRadius: "10px",
             fontSize: '15px',
           }}
-          variant="ghost">
+          variant="ghost"
+          onClick={hadleButtoncourse}>
           <Youtube style={{ width: '25px', height: '25px' }} />
           Cursos
         </Button>
