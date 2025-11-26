@@ -6,6 +6,8 @@ import Home from "./pages/home/Home";
 import TopBar from "./components/topBar/TopBar";
 import LearningPath from "./pages/learningPath/LearningPath";
 import Course from "./pages/course/Course";
+import VideoPage from "./pages/videoPage/VideoPage";
+import Favorites from "./pages/favorites/Favorites";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route path="trilhas/:path_id" element={<LearningPath />} />
           <Route path="home" element={<TopBar />} />
           <Route path="curso" element={<Course />} />
+          <Route path="video/:course_id" element={<VideoPage />} />
+          <Route path="favorites" element={<Favorites />}></Route>
         </Route>
         <Route path="/" element={<Login />} />
         <Route path="cadastro" element={<Register />} />

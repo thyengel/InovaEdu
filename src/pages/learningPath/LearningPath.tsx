@@ -6,18 +6,15 @@ import { useNavigate, useParams } from "react-router";
 import data from "@/data/mockedData.json";
 import ClassesDialog from "@/components/classesDialog/ClassesDialog";
 
-type ClassType = { title: string, video: string, thumbnail: string }[]
-
-
 function LearningPath() {
   const navigate = useNavigate();
   const { path_id } = useParams();
   const selectedLearningPath = data.find(({ id }) => id === path_id);
   const [open, setOpen] = useState(false);
-  const [selectedClasses, setSelectedClasses] = useState<ClassType>([]);
+  const [selectedCourseId, setSelectedCourseId] = useState('');
 
-  function handleSelectedClasses(classes: ClassType) {
-    setSelectedClasses(classes)
+  function handleSelectedCourseId(courseId: string) {
+    setSelectedCourseId(courseId);
     setOpen(true)
   }
 
@@ -33,19 +30,14 @@ function LearningPath() {
         <TopBar />
         <Container style={{ display: 'flex' }}>
           <Card.Root width="500px">
-            <Card.Body gap="2" style={{
-              display: 'flex',
-              alignItems: 'center',
-            }}>
+            <Card.Body gap="2" style={{ display: 'flex', alignItems: 'center' }}>
               <Image src={selectedLearningPath?.imgSrc} />
               <Card.Title mt="2">{selectedLearningPath?.learningPath}</Card.Title>
               <Card.Description style={{ textAlign: 'center' }}>
                 {selectedLearningPath?.description}
               </Card.Description>
             </Card.Body>
-            <Card.Footer justifyContent="flex-end" style={{
-              fontSize: '14px'
-            }}>
+            <Card.Footer justifyContent="flex-end" style={{ fontSize: '14px' }}>
               <Box p="2"
                 borderWidth="1px"
                 borderColor="border.disabled"
@@ -76,12 +68,7 @@ function LearningPath() {
                 borderColor="border.disabled"
                 color="fg.disabled"
                 borderRadius="lg"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  marginBottom: '30px',
-                  gap: '20px',
-                }}>
+                style={{ display: 'flex', alignItems: 'center', marginBottom: '30px', gap: '20px' }}>
                 <Box p="4"
                   borderWidth="1px"
                   borderColor="border.disabled"
@@ -89,15 +76,12 @@ function LearningPath() {
                   borderRadius="lg">
                   <Route />
                 </Box>
-                <Text style={{
-                  fontSize: '18px',
-                  fontWeight: 'bold'
-                }}>
+                <Text style={{ fontSize: '18px', fontWeight: 'bold' }}>
                   Trilhas
                 </Text>
               </Box>
               <Timeline.Root>
-                {selectedLearningPath?.courses.map(({ title, description, duration, img, classes }, i) => (
+                {selectedLearningPath?.courses.map(({ title, description, duration, img, id }, i) => (
                   <Timeline.Item style={{ marginLeft: '20px' }}>
                     <Timeline.Connector >
                       <Timeline.Separator />
@@ -107,13 +91,8 @@ function LearningPath() {
                     </Timeline.Connector>
                     <Timeline.Content>
                       <Card.Root flexDirection="row" overflow="hidden"
-                        onClick={() => handleSelectedClasses(classes)}
-                        style={{
-                          cursor: 'pointer',
-                          transition: 'all 200ms linear',
-                          marginLeft: '70px',
-                          height: '200px'
-                        }}
+                        onClick={() => handleSelectedCourseId(id)}
+                        style={{ cursor: 'pointer', transition: 'all 200ms linear', marginLeft: '70px', height: '200px' }}
                         _hover={{ boxShadow: '0px 5px 22px 6px rgba(125,165,121,0.5)' }}>
                         <Image
                           objectFit="cover"
@@ -143,7 +122,7 @@ function LearningPath() {
 
         </Container>
       </Container >
-      <ClassesDialog open={open} classes={selectedClasses} onClose={() => setOpen(false)} />
+      <ClassesDialog open={open} courseId={selectedCourseId} onClose={() => setOpen(false)} />
     </>
   )
 }

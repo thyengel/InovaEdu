@@ -1,7 +1,7 @@
 import { Avatar, Button, Container, Menu, Portal } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
 import logo from "../../images/logo.png";
-import { CircleUserRound, Heart, PlayCircleIcon, Youtube } from "lucide-react";
+import { CircleUserRound, Heart, Youtube } from "lucide-react";
 import useMutation from "@/hooks/useMutation";
 import UserService from "@/services/UserService";
 import { useNavigate } from "react-router";
@@ -27,6 +27,10 @@ function TopBar() {
 
   function hadleButtoncourse() {
     navigate('/curso')
+  }
+
+  function handleButtonFavorites() {
+    navigate('/favorites')
   }
 
   return (
@@ -61,15 +65,7 @@ function TopBar() {
             borderRadius: "10px",
             fontSize: '15px',
           }}
-          variant="ghost">
-          <PlayCircleIcon style={{ width: '25px', height: '25px' }} />
-          Formação
-        </Button>
-        <Button
-          style={{
-            borderRadius: "10px",
-            fontSize: '15px',
-          }}
+          onClick={handleButtonFavorites}
           variant="ghost">
           <Heart style={{ width: '25px', height: '25px' }} />
           Favoritos

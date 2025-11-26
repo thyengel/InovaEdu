@@ -8,13 +8,16 @@ import useLikedList from "@/hooks/useLikedList";
 
 const cursos = data.flatMap(({ courses }) => courses);
 
-function Course() {
+function Favorites() {
 
   const [open, setOpen] = useState(false);
   const [selectedCourseId, setSelectedCourseId] = useState<string>('');
 
   const { add, likedList, remove } = useLikedList();
 
+  const coursesLiked = cursos.filter((course) => (
+    likedList.includes(course.title)
+  ))
   function handleSelectedCourseId(courseId: string) {
     setSelectedCourseId(courseId);
     setOpen(true)
@@ -30,9 +33,9 @@ function Course() {
 
   return (
     <>
-      <Container>
+      <Container style={{ height: '100vh' }}>
         <TopBar />
-        <Container>
+        <Container >
           <div style={{
             display: 'flex',
             marginBottom: '10px',
@@ -51,11 +54,11 @@ function Course() {
               <TvMinimal />
             </Box>
             <Text style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '20px' }}>
-              Cursos
+              Favoritos
             </Text>
           </div>
           <SimpleGrid columns={2} gap="50px" >
-            {cursos.map(({ title, description, duration, img, classes, id }) => (
+            {coursesLiked.map(({ title, description, duration, img, classes, id }) => (
               <Card.Root flexDirection="row" overflow="hidden" h="255px" key={title}
                 onClick={() => handleSelectedCourseId(id)}
                 style={{ cursor: 'pointer', transition: 'all 200ms linear', height: '200px' }}
@@ -104,4 +107,4 @@ function Course() {
   );
 }
 
-export default Course;
+export default Favorites;
