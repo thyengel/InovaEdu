@@ -8,6 +8,7 @@
     "imgSrc": "https://i.postimg.cc/28QXq81V/Whats-App-Image-2025-11-12-at-20-29-23.jpg",
     "courses": [
       {
+        "id": "10",
         "title": "Programador - Crie jogos, sites e aplicativos",
         "description": "Aprenda a linguagem dos computadores de forma divertida! Comece do zero e desenvolva seus próprios jogos, sites e aplicativos simples, explorando lógica de programação, design e criatividade.",
         "duration": "8 semanas",
@@ -15,7 +16,7 @@
         "classes": [
           {
             "title": "Introdução à Programação e Pensamento Lógico",
-            "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
+            "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
             "thumbnail": "https://i.postimg.cc/TwkBQhKF/Introduc-a-o-a-Programac-a-o-e-Pensamento-Lo-gico.png"
           },
           {
@@ -56,6 +57,7 @@
         ]
       },
       {
+        "id": "11",
         "title": "AnimaLab – Crie animações e games",
         "description": "Dê vida a personagens e histórias! Aprenda animação 2D e 3D e crie jogos simples usando ferramentas como Scratch e Blender.",
         "duration": "7 semanas",
@@ -99,44 +101,46 @@
         ]
       },
       {
+        "id": "12",
         "title": "Designer Criativo – Dê vida às suas ideias",
         "description": "Desenvolva conceitos de design gráfico e digital, criando artes para redes sociais, cartazes e layouts usando Canva e Figma.",
         "duration": "6 semanas",
         "img": "https://i.postimg.cc/Qx8Rx4N9/Designer-Criativo.png",
         "classes": [
           {
-            "title": "Princípios do Design (cor, tipografia, composição)",
+            "title": "Princípios do Design",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/PJwZKyFW/Princi-pios-do-Design-(1).png"
           },
           {
             "title": "Criando Artes no Canva",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/bvVStXF9/Criando-Artes-no-Canva.png"
           },
           {
             "title": "Design para Redes Sociais",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/YqX7kp4n/Design-para-Redes-Sociais.png"
           },
           {
             "title": "Montando Cartazes e Banners",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/L6WWNhYf/Montando-Cartazes-e-Banners.png"
           },
           {
             "title": "Introdução ao Figma",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/NfZNRVZQ/Introduc-a-o-ao-Figma.png"
           },
           {
             "title": "Projeto Final – Identidade visual simples",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/d3b8TM3m/Projeto-Final-Identidade-Visual-Simples.png"
           }
         ]
       },
       {
+        "id": "13",
         "title": "Fotógrafo – Aprenda a Arte da Fotografia",
         "description": "Domine os fundamentos da câmera, luz, composição e edição, criando fotos criativas e profissionais.",
         "duration": "6 semanas",
@@ -145,32 +149,32 @@
           {
             "title": "Entendendo a Câmera e Modos de Foto",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/sXSDNLsr/Entendendo-a-Ca-mera-e-Modos-de-Foto.png"
           },
           {
             "title": "Composição e Enquadramento",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/vHmw1KkZ/Composic-a-o-e-Enquadramento.png"
           },
           {
             "title": "Fotografia com Luz Natural",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/FRxwzbxq/Fotografia-com-Luz-Natural.png"
           },
           {
             "title": "Fotos em Ambiente Interno",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/gJGBCXPH/Fotos-em-Ambiente-Interno.png"
           },
           {
             "title": "Introdução à Edição (Lightroom)",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/zv67G346/Introduc-a-o-a-Edic-a-o-(Lightroom).png"
           },
           {
             "title": "Projeto Final – Álbum fotográfico",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/vBSL0cYN/Projeto-Final-A-lbum-Fotogra-fico.png"
           }
         ]
       }
@@ -185,6 +189,7 @@
     "imgSrc": "https://i.postimg.cc/fRvFPTZd/Whats-App-Image-2025-11-12-at-20-29-23-1.jpg",
     "courses": [
       {
+        "id": "14",
         "title": "Youtuber – Criação e Edição de Vídeos",
         "description": "Aprenda a criar roteiros, gravar vídeos, editar como um profissional e montar seu próprio canal com identidade e criatividade.",
         "duration": "7 semanas",
@@ -193,41 +198,42 @@
           {
             "title": "Como criar roteiros e planejar vídeos",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/66nF8XMK/Como-criar-roteiros-e-planejar-vi-deos.png"
           },
           {
             "title": "Técnicas de gravação com celular",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/rFYszxhv/Te-cnicas-de-gravac-a-o-com-celular.png"
           },
           {
             "title": "Iluminação e Som",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/L5Q9YFV3/Iluminac-a-o-e-Som.png"
           },
           {
             "title": "Introdução à Edição",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/wv0HZYnm/Introduc-a-o-a-Edic-a-o.png"
           },
           {
             "title": "Criando thumbnails atrativas",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/g0KPLPz3/Criando-thumbnails-atrativas.png"
           },
           {
             "title": "Postando e otimizando no YouTube",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/hPqWsjXh/Postando-e-otimizando-no-You-Tube.png"
           },
           {
             "title": "Projeto Final – Vídeo completo para o canal",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/HkBqT9BQ/Projeto-Final-Vi-deo-completo-para-o-canal.png"
           }
         ]
       },
       {
+        "id": "15",
         "title": "Produtor de Conteúdo Digital",
         "description": "Domine técnicas modernas para criar posts, vídeos rápidos, narrativas virais e estratégias para redes sociais.",
         "duration": "6 semanas",
@@ -236,36 +242,37 @@
           {
             "title": "Princípios de conteúdo digital",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/cLpQgV91/Princi-pios-de-conteu-do-digital.png"
           },
           {
             "title": "Criando posts virais",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/FKbJf1kq/Criando-posts-virais.png"
           },
           {
             "title": "Produção de vídeos curtos",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/mkncxHKr/Produc-a-o-de-vi-deos-curtos.png"
           },
           {
             "title": "Narrativas e Storytelling rápido",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/pdBpW7gX/Narrativas-e-Storytelling-ra-pido.png"
           },
           {
             "title": "Ferramentas de edição",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/pdBpW7gX/Narrativas-e-Storytelling-ra-pido.png"
           },
           {
             "title": "Projeto Final – Pacote de conteúdo completo",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/rwk4qSKG/Projeto-Final-Pacote-de-conteu-do-completo.png"
           }
         ]
       },
       {
+        "id": "16",
         "title": "Animaker – Criação de Animações 2D",
         "description": "Descubra como dar vida a personagens, objetos e histórias por meio de animações simples e divertidas em 2D.",
         "duration": "6 semanas",
@@ -274,36 +281,37 @@
           {
             "title": "Fundamentos do 2D",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/6pcF0fZ2/Fundamentos-do-2D.png"
           },
           {
             "title": "Criando Personagens Simples",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/8cgyD7Wp/Criando-Personagens-Simples.png"
           },
           {
             "title": "Movimento Frame a Frame",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/QNqgVYZT/Movimento-Frame-a-Frame.png"
           },
           {
             "title": "Efeitos e Expressões",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/8ChJ9s1F/Efeitos-e-Expresso-es.png"
           },
           {
             "title": "Animação de Cena Completa",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/pTWTSZcP/Animac-a-o-de-Cena-Completa.png"
           },
           {
             "title": "Mini Curta Animado – Projeto Final",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/5NhtJ1kd/Mini-Curta-Animado-Projeto-Final.png"
           }
         ]
       },
       {
+        "id": "17",
         "title": "Ilustração Digital para Iniciantes",
         "description": "Aprenda a desenhar no digital, criar personagens, montar cenários e preparar artes para projetos criativos.",
         "duration": "5 semanas",
@@ -312,27 +320,27 @@
           {
             "title": "Ferramentas básicas de desenho digital",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/x1dVBZnB/Ferramentas-ba-sicas-de-desenho-digital.png"
           },
           {
             "title": "Criando personagens simples",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/wMzS2fwQ/Criando-personagens-simples.png"
           },
           {
             "title": "Linhas, sombras e cores",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/XYPmm72G/Linhas-sombras-e-cores.png"
           },
           {
             "title": "Cenários básicos",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/fTTPb0pn/Cena-rios-ba-sicos.png"
           },
           {
             "title": "Ilustração final completa",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/vm9qK7g7/Ilustrac-a-o-final-completa.png"
           }
         ]
       }
@@ -347,6 +355,7 @@
     "imgSrc": "https://i.postimg.cc/2STcwcFD/Whats-App-Image-2025-11-12-at-20-29-24.jpg",
     "courses": [
       {
+        "id": "18",
         "title": "Jovem Empreendedor – Crie seu próprio negócio",
         "description": "Aprenda a transformar ideias em produtos reais. Desenvolva noções de marketing, vendas e planejamento financeiro.",
         "duration": "6 semanas",
@@ -355,36 +364,37 @@
           {
             "title": "O que é empreender?",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/L4Zt34PW/O-que-e-empreender.png"
           },
           {
             "title": "Criando ideias que resolvem problemas",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/9XT9q855/Criando-ideias-que-resolvem-problemas.png"
           },
           {
             "title": "Marketing simples para iniciantes",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/3xbNqm5r/Marketing-simples-para-iniciantes.png"
           },
           {
             "title": "Criando seu primeiro produto",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/rm9LB2RX/Criando-seu-primeiro-produto.png"
           },
           {
             "title": "Noções básicas de vendas",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/L8rRfTFg/Noc-o-es-ba-sicas-de-vendas.png"
           },
           {
             "title": "Projeto Final – Mini plano de negócio",
             "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": ""
+            "thumbnail": "https://i.postimg.cc/NF0ZZ9wr/Projeto-Final-Mini-plano-de-nego-cio.png"
           }
         ]
       },
       {
+        "id": "19",
         "title": "Educação Financeira – Dinheiro na vida real",
         "description": "Descubra como organizar gastos, economizar, planejar metas e começar a investir de forma simples e prática.",
         "duration": "4 semanas",
@@ -413,6 +423,7 @@
         ]
       },
       {
+        "id": "20",
         "title": "Idiomas com Séries e Filmes – Aprenda se divertindo",
         "description": "Aprenda inglês com falas reais de séries e filmes. Estude vocabulário, gírias e expressões do dia a dia de forma divertida.",
         "duration": "8 semanas",
@@ -461,6 +472,7 @@
         ]
       },
       {
+        "id": "21",
         "title": "Produtividade e Organização – Estude melhor, viva melhor",
         "description": "Aprenda técnicas de foco, organização e planejamento para melhorar seus estudos e rotina.",
         "duration": "4 semanas",
@@ -489,6 +501,7 @@
         ]
       },
       {
+        "id": "22",
         "title": "Habilidades Socioemocionais – Inteligência para a Vida",
         "description": "Desenvolva empatia, inteligência emocional, comunicação e estratégias para lidar com desafios pessoais e sociais.",
         "duration": "5 semanas",

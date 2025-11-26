@@ -30,10 +30,10 @@ type ClassType = { title: string, video: string, thumbnail: string }[]
 function Home() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
-  const [selectedClasses, setSelectedClasses] = useState<ClassType>([]);
+  const [selectedCourseId, setSelectedCourseId] = useState('');
 
-  function handleSelectedClasses(classes: ClassType) {
-    setSelectedClasses(classes)
+  function handleSelectedCourseId(courseId: string) {
+    setSelectedCourseId(courseId)
     setOpen(true)
   }
 
@@ -61,9 +61,9 @@ function Home() {
           <Text style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '20px' }}>Cursos mais acessados</Text>
         </div>
         <SimpleGrid columns={2} gap="50px">
-          {COURSES_MOST_WATCH.map(({ title, description, duration, img, classes }) => (
+          {COURSES_MOST_WATCH.map(({ title, description, duration, img, id }) => (
             <Card.Root flexDirection="row" overflow="hidden" h="255px" key={title}
-              onClick={() => handleSelectedClasses(classes)}
+              onClick={() => handleSelectedCourseId(id)}
               style={{
                 cursor: 'pointer',
                 transition: 'all 200ms linear',
@@ -156,7 +156,7 @@ function Home() {
           </Grid>
         </Box>
       </Container >
-      <ClassesDialog open={open} classes={selectedClasses} onClose={() => setOpen(false)} />
+      <ClassesDialog open={open} courseId={selectedCourseId} onClose={() => setOpen(false)} />
     </>
   )
 }
