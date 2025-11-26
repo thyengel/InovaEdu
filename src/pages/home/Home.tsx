@@ -25,7 +25,7 @@ const LEARNING_TRACK = [
     image: "https://i.postimg.cc/2STcwcFD/Whats-App-Image-2025-11-12-at-20-29-24.jpg"
   }
 ]
-type ClassType = { title: string, video: string, thumbnail: string }[]
+
 
 function Home() {
   const navigate = useNavigate();
